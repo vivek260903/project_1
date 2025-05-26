@@ -32,12 +32,7 @@ kaggle-clone/
 │   │       ├── Login.js
 │   │       └── Register.js
 ├── README.md
-```  
 
----
-
-### README.md
-```
 # Kaggle Clone
 
 ## Overview
