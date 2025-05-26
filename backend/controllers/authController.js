@@ -3,6 +3,7 @@ const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
 
 exports.register = async (req, res) => {
+  console.log("Received body:", req.body);
   const { name, email, password } = req.body;
   try {
     let user = await User.findOne({ email });
@@ -17,6 +18,7 @@ exports.register = async (req, res) => {
     const token = jwt.sign({ id: user.id }, process.env.JWT_SECRET);
     res.json({ token });
   } catch (err) {
+    console.error("Registration error:", err);
     res.status(500).send('Server error');
   }
 };
